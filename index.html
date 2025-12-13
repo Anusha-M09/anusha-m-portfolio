@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Anusha M — Portfolio</title>
+<meta name="description" content="Anusha M — MCA Graduate | Fresher | Open to Opportunities" />
+<style>
+/* ===== SAME THEME AS VIKAS PORTFOLIO (CLEAN • PREMIUM • SAFE) ===== */
+:root{
+  /* Dark default */
+  --bg-from:#0f2027;
+  --bg-via:#203a43;
+  --bg-to:#2c5364;
+
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.82);
+  --muted2:rgba(255,255,255,.66);
+
+  --glass:rgba(255,255,255,.06);
+  --glass-border:rgba(255,255,255,.14);
+
+  --accent1:#8ab4ff;
+  --accent2:#6ee7e7;
+  --accent3:#34d399;
+
+  --radius:18px;
+  --shadow:0 12px 30px rgba(0,0,0,.35);
+  --maxw:1100px;
+}
+
+/* Light mode */
+.light{
+  --bg-from:#f2f6ff;
+  --bg-via:#eef6f6;
+  --bg-to:#f7fbfb;
+  --text:#0e1726;
+  --muted:rgba(14,23,38,.82);
+  --muted2:rgba(14,23,38,.66);
+  --glass:rgba(255,255,255,.85);
+  --glass-border:rgba(14,23,38,.12);
+  --shadow:0 10px 25px rgba(14,23,38,.12);
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;padding:0;
+  font:16px/1.6 system-ui,Segoe UI,Roboto;
+  background:linear-gradient(135deg,var(--bg-from),var(--bg-via),var(--bg-to));
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--maxw);margin:auto;padding:64px 20px}
+
+/* NAV */
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(0,0,0,.15);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--glass-border);
+}
+header .row{display:flex;justify-content:space-between;align-items:center;max-width:var(--maxw);margin:auto;padding:14px 20px}
+nav a{margin-left:18px;font-weight:500}
+
+.btn{
+  padding:10px 16px;border-radius:12px;
+  border:1px solid var(--glass-border);
+  background:var(--glass);
+  cursor:pointer
+}
+
+/* CARDS */
+.card{
+    margin-bottom:28px;
+  background:var(--glass);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+.grid{
+    row-gap:32px;display:grid;gap:20px}
+.two{grid-template-columns:1.2fr .8fr}
+
+h1{font-size:clamp(2.2rem,4vw,3.4rem);margin:0}
+h2{margin:0 0 24px}
+.muted{color:var(--muted)}
+
+.pill{
+  display:inline-block;
+  border:1px solid var(--glass-border);
+  padding:6px 12px;
+  border-radius:14px;
+  font-size:.85rem;
+  margin:4px
+}
+
+footer{text-align:center;opacity:.7;padding:30px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+/* ===== MICRO INTERACTIONS & ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s ease}
+.reveal.active{opacity:1;transform:none}
+
+.card{transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease}
+.card:hover{border-color:rgba(255,120,180,.55)}
+
+nav a{transition:color .25s ease}
+nav a:hover{color:#ff8fc7}
+
+.btn{transition:transform .25s ease, box-shadow .25s ease, background .25s ease}
+.btn:hover{box-shadow:0 15px 35px rgba(255,120,180,.45)}
+
+.pill{transition:transform .25s ease, background .25s ease}
+.pill:hover{background:rgba(255,120,180,.15)}
+
+.avatar{transition:transform .5s ease, box-shadow .5s ease}
+.avatar:hover{transform:scale(1.04)}
+
+/* ===== SUBTLE PINK TUNING ===== */
+:root{
+  --accent1:#ff7abf;  /* tuned pink */
+  --accent2:#f0a3d1;  /* soft rose */
+}
+
+/* ===== EXTRA ANIMATIONS (SAFE + SMOOTH) ===== */
+
+/* Floating background glow */
+.bg-glow{
+  position:fixed;inset:-20%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(40% 40% at 20% 20%, rgba(255,140,190,.18), transparent 60%),
+    radial-gradient(35% 35% at 80% 30%, rgba(240,180,220,.15), transparent 60%),
+    radial-gradient(30% 30% at 50% 80%, rgba(200,160,255,.15), transparent 60%);
+  animation:glowMove 18s ease-in-out infinite alternate;
+}
+@keyframes glowMove{
+  from{transform:translateY(-20px)}
+  to{transform:translateY(20px)}
+}
+
+/* Card tilt on hover */
+.card:hover{transform:translateY(-10px) scale(1.02) rotateX(2deg) rotateY(-2deg)}
+
+/* Button click pulse */
+.btn:active{transform:scale(.95)}
+
+/* Navbar underline slide */
+nav a::after{transition:width .35s ease, left .35s ease}
+nav a:hover::after{left:0;width:100%}
+
+/* Floating skill pills */
+.pill{animation:floatPill 6s ease-in-out infinite alternate}
+.pill:nth-child(even){animation-delay:1.5s}
+@keyframes floatPill{
+  from{transform:translateY(0)}
+  to{transform:translateY(-6px)}
+}
+
+/* ===== CLICKABLE PROJECT CUE ANIMATIONS ===== */
+
+/* Project cards clickable hint */
+a > .card{position:relative;overflow:hidden}
+
+a > .card::after{
+  content:"View Repository ↗";
+  position:absolute;
+  right:16px;top:16px;
+  font-size:.75rem;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(255,120,180,.15);
+  border:1px solid rgba(255,120,180,.35);
+  color:var(--text);
+  opacity:0;
+  transform:translateY(-6px);
+  transition:.35s ease;
+}
+
+a > .card:hover::after{
+  opacity:1;
+  transform:none;
+}
+
+/* Cursor hint */
+a > .card{cursor:pointer}
+
+/* Arrow slide on hover */
+a > .card h3::after{
+  content:" →";
+  opacity:0;
+  transition:.3s
+}
+
+a > .card:hover h3::after{opacity:1}
+
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<header>
+  <div class="row">
+    <strong>Anusha M</strong>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" class="btn">🌙</button>
+    </nav>
+  </div>
+</header>
+
+<section class="container">
+  <div class="grid two">
+    <div>
+      <h1>Anusha M</h1>
+      <p class="muted">MCA Graduate • Fresher • Mandya, India</p>
+      <p class="muted" style="margin-top:12px">
+        A dynamic MCA graduate with a strong foundation in computer applications and a passion for creating innovative solutions. Seeking an entry-level role to apply technical skills, contribute to organizational growth, and continuously enhance professional expertise.
+      </p>
+      <div style="margin-top:16px">
+        <span class="pill">Open to Opportunities</span>
+        <a class="pill" id="resumeBtn" href="https://drive.google.com/file/d/1usY7Z973nBMw4-bKk2MdYeZTpdX0snvu/view?usp=sharing" target="_blank">Download Resume</a>
+      </div>
+    </div>
+    <div>
+      <div style="width:260px;max-width:100%;aspect-ratio:1/1;border-radius:20px;overflow:hidden;border:2px solid var(--glass-border)">
+        <img src="profile.jpg" alt="Anusha M" style="width:100%;height:100%;object-fit:cover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <h2>About Me</h2>
+  <div class="card">
+    <p class="muted">MCA graduate awaiting final results with academic and project experience in web development, Python programming, and database management.</p>
+  </div>
+</section>
+
+<section id="education" class="container">
+  <h2>Education</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <h3>MCA</h3>
+        <span class="pill">2023 – 2025</span>
+      </div>
+      <p class="muted">Cauvery Institute of Technology</p>
+      <p class="muted">Expected Results: November 2025</p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <h3>BSc (PCM)</h3>
+        <span class="pill">2020 – 2023</span>
+      </div>
+      <p class="muted">Mandya University</p>
+      <p class="muted">CGPA: 7.81</p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <h3>Higher Secondary Education</h3>
+        <span class="pill">2019 – 2020</span>
+      </div>
+      <p class="muted">Shree Geetha Excellence PU College</p>
+      <p class="muted">Board: Karnataka | Percentage: 73%</p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <h3>Secondary Education</h3>
+        <span class="pill">2017 – 2018</span>
+      </div>
+      <p class="muted">Mandavya English Medium High School</p>
+      <p class="muted">Board: Karnataka | Percentage: 71.8%</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects" class="container">
+  <h2>Projects</h2>
+  <div class="grid">
+
+    <a href="https://github.com/Anusha-M09/Advanced-Charging-Station-Locator-with-QR-Code-Access" target="_blank" style="text-decoration:none;color:inherit">
+      <div class="card">
+        <h3>Advanced Charging Station Locator with QR Code Access</h3>
+        <p class="muted">MCA Main Project</p>
+        <p class="muted">Android application to locate nearby EV charging stations with QR-code based access for seamless charging.</p>
+        <div>
+          <span class="pill">Java</span>
+          <span class="pill">Android</span>
+          <span class="pill">Firebase</span>
+          <span class="pill">QR Code</span>
+        </div>
+      </div>
+    </a>
+    </div>
+
+    <div class="card">
+      <h3>Temperature Controlled DC Fan</h3>
+      <p class="muted">IoT Internship Project</p>
+      <p class="muted">Designed a DC fan that automatically adjusts speed based on surrounding temperature using sensors.</p>
+      <div>
+        <span class="pill">Embedded Systems</span><span class="pill">IoT</span><span class="pill">Sensors</span>
+      </div>
+    </div>
+
+    <a href="https://github.com/Anusha-M09/Groot-Chatbot" target="_blank">
+      <div class="card">
+        <h3>Groot Chatbot</h3>
+        <p class="muted">Chatbot backed by an Excel data source to answer user queries.</p>
+        <div>
+          <span class="pill">Python</span><span class="pill">Excel</span><span class="pill">CSS</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://github.com/Anusha-M09/Health-Record-Organizer" target="_blank">
+      <div class="card">
+        <h3>Health Record Organizer</h3>
+        <p class="muted">Web app to securely upload, store, download, and manage health records.</p>
+        <div>
+          <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">SQL</span><span class="pill">Python</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="card">
+      <h3>Fuel Station Analysis</h3>
+      <p class="muted">Mini Project</p>
+      <p class="muted">Analyzed fuel station data to identify trends using data visualization techniques.</p>
+      <div>
+        <span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Matplotlib</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="container">
+  <h2>Technical Skills</h2>
+  <div class="card">
+    <p class="muted"><strong>Programming Languages:</strong> Java, Python</p>
+    <p class="muted"><strong>Web / Backend:</strong> HTML, CSS, JDBC, Servlets, JSP</p>
+    <p class="muted"><strong>Databases:</strong> MySQL, Firebase Realtime Database</p>
+    <p class="muted"><strong>Tools:</strong> Git, GitHub</p>
+  </div>
+</section>
+
+<section id="achievements" class="container">
+  <h2>Achievements</h2>
+  <div class="card">
+    <p class="muted">Solved 100+ coding problems on HackerRank demonstrating strong problem-solving and logical thinking skills.</p>
+  </div>
+</section>
+
+<section id="soft-skills" class="container">
+  <h2>Soft Skills</h2>
+  <div class="card">
+    <ul class="muted" style="padding-left:18px;line-height:1.9">
+      <li>Problem-Solving & Analytical Thinking</li>
+      <li>Team Collaboration & Adaptability</li>
+      <li>Effective Communication</li>
+      <li>Time Management & Organization</li>
+      <li>Quick Learner & Self-Motivated</li>
+    </ul>
+  </div>
+</section>
+
+<section id="certifications" class="container">
+  <h2>Certifications</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Introduction to IoT and Robotics Internship</h3>
+      <p class="muted">Tech Anveshana (Nov 2024 – Jan 2025)</p>
+      <ul class="muted" style="padding-left:18px;line-height:1.8">
+        <li>Gained practical exposure to IoT systems and robotics concepts</li>
+        <li>Worked on designing, building, and coding embedded system components</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Ethical Hacking</h3>
+      <p class="muted">March 2025</p>
+      <ul class="muted" style="padding-left:18px;line-height:1.8">
+        <li>Acquired knowledge of core network and system security concepts</li>
+        <li>Learned methods for identifying vulnerabilities and implementing ethical security practices</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2>Contact</h2>
+  <div class="card">
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+
+      <a href="mailto:aanusham730@gmail.com" style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--glass-border);text-decoration:none">
+        <span>✉️</span>
+        <span>aanusham730@gmail.com</span>
+      </a>
+
+      <a href="tel:+918951029584" style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--glass-border);text-decoration:none">
+        <span>📞</span>
+        <span>+91 8951029584</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/anusha-m-922151336" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--glass-border);text-decoration:none">
+        <span style="font-weight:700">in</span>
+        <span>Anusha M</span>
+      </a>
+
+      <a href="https://github.com/Anusha-M09" target="_blank" style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid var(--glass-border);text-decoration:none">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.11 3.29 9.44 7.86 10.97.57.1.78-.25.78-.55v-2.02c-3.2.7-3.87-1.37-3.87-1.37-.53-1.35-1.3-1.71-1.3-1.71-1.06-.72.08-.7.08-.7 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.76.4-1.27.73-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.65.23 2.87.11 3.17.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.41-5.25 5.69.41.35.78 1.05.78 2.12v3.14c0 .31.21.66.79.55 4.56-1.53 7.85-5.86 7.85-10.97C23.5 5.74 18.27.5 12 .5z"/>
+        </svg>
+        <span>Anusha-M09</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Anusha M</footer>
+
+<script>
+// ===== THEME TOGGLE =====
+const btn=document.getElementById('theme');
+btn.onclick=()=>{
+  document.documentElement.classList.toggle('light');
+  btn.textContent=document.documentElement.classList.contains('light')?'☀️':'🌙'
+};
+
+// ===== SCROLL REVEAL =====
+const reveals=document.querySelectorAll('.container, .card');
+const revealOnScroll=()=>{
+  const trigger=window.innerHeight*0.85;
+  reveals.forEach(el=>{
+    const top=el.getBoundingClientRect().top;
+    if(top<trigger){el.classList.add('reveal','active')}
+  })
+};
+window.addEventListener('scroll',revealOnScroll);
+revealOnScroll();
+
+// ===== RESUME LINK =====
+const resumeLink="PASTE_YOUR_GOOGLE_DRIVE_RESUME_LINK_HERE";
+const resumeBtn=document.getElementById('resumeBtn');
+if(resumeBtn && resumeLink!=="PASTE_YOUR_GOOGLE_DRIVE_RESUME_LINK_HERE"){resumeBtn.href=resumeLink}
+</script>
+</body>
+</html>
