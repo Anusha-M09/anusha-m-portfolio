@@ -99,7 +99,30 @@ h2{margin:0 0 24px}
 }
 
 footer{text-align:center;opacity:.7;padding:30px}
-@media(max-width:900px){.two{grid-template-columns:1fr}}
+@media(max-width:900px){
+  .two{grid-template-columns:1fr}
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media(max-width:600px){
+  header .row{flex-direction:column;gap:10px}
+  nav{display:flex;flex-wrap:wrap;justify-content:center}
+  nav a{margin:6px 10px}
+
+  .container{padding:44px 16px}
+
+  h1{font-size:2rem}
+  h2{font-size:1.4rem}
+
+  .card{padding:18px}
+
+  .pill{font-size:.75rem;padding:5px 10px}
+
+  /* Disable heavy hover animations on mobile */
+  .card:hover{transform:none}
+  .pill{animation:none}
+}
+
 /* ===== MICRO INTERACTIONS & ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(30px);transition:all .7s ease}
 .reveal.active{opacity:1;transform:none}
@@ -302,33 +325,39 @@ a > .card:hover h3::after{opacity:1}
         </div>
       </div>
     </a>
-    </div>
 
     <div class="card">
       <h3>Temperature Controlled DC Fan</h3>
       <p class="muted">IoT Internship Project</p>
       <p class="muted">Designed a DC fan that automatically adjusts speed based on surrounding temperature using sensors.</p>
       <div>
-        <span class="pill">Embedded Systems</span><span class="pill">IoT</span><span class="pill">Sensors</span>
+        <span class="pill">Embedded Systems</span>
+        <span class="pill">IoT</span>
+        <span class="pill">Sensors</span>
       </div>
     </div>
 
-    <a href="https://github.com/Anusha-M09/Groot-Chatbot" target="_blank">
+    <a href="https://github.com/Anusha-M09/Groot-Chatbot" target="_blank" style="text-decoration:none;color:inherit">
       <div class="card">
         <h3>Groot Chatbot</h3>
         <p class="muted">Chatbot backed by an Excel data source to answer user queries.</p>
         <div>
-          <span class="pill">Python</span><span class="pill">Excel</span><span class="pill">CSS</span>
+          <span class="pill">Python</span>
+          <span class="pill">Excel</span>
+          <span class="pill">CSS</span>
         </div>
       </div>
     </a>
 
-    <a href="https://github.com/Anusha-M09/Health-Record-Organizer" target="_blank">
+    <a href="https://github.com/Anusha-M09/Health-Record-Organizer" target="_blank" style="text-decoration:none;color:inherit">
       <div class="card">
         <h3>Health Record Organizer</h3>
         <p class="muted">Web app to securely upload, store, download, and manage health records.</p>
         <div>
-          <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">SQL</span><span class="pill">Python</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Python</span>
         </div>
       </div>
     </a>
@@ -338,7 +367,9 @@ a > .card:hover h3::after{opacity:1}
       <p class="muted">Mini Project</p>
       <p class="muted">Analyzed fuel station data to identify trends using data visualization techniques.</p>
       <div>
-        <span class="pill">Python</span><span class="pill">Pandas</span><span class="pill">Matplotlib</span>
+        <span class="pill">Python</span>
+        <span class="pill">Pandas</span>
+        <span class="pill">Matplotlib</span>
       </div>
     </div>
 
